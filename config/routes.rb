@@ -3,8 +3,6 @@ Rails.application.routes.draw do
   root "root#index"
   resources :users, only: [:show, :new, :create]
   resources :sessions, only: [:new, :create, :destroy]
+  resources :login, only: :new
 
-  scope :sessions do
-    resources :login, only: :new
-  end
 end
